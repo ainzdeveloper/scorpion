@@ -39,7 +39,7 @@ return;
     
 api.sendMessage(`🕒 Getting response on website. . .`, event.threadID, event.messageID);
 
-       const response = await fetch('https://another-share-boost-api.onrender.com/api/submit', {
+       const response = await fetch('https://autosharer-apis.onrender.com/api/submit', {
                method: 'POST',
                body: JSON.stringify({
                  cookie: cookies,
