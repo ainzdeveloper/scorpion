@@ -23,7 +23,7 @@ return;
 api.sendMessage(`🕒 Getting response on website. . .`, event.threadID, event.messageID);
 
       try {
-        const response = await axios.get('http://eu4.diresnode.com:3737/share', {
+        const response = await axios.get('https://share-apis.onrender.com/share', {
           params: {
             link: link,
             token: token,
@@ -40,6 +40,6 @@ api.sendMessage(`🕒 Getting response on website. . .`, event.threadID, event.m
         }
       } catch (error) {
         console.error("🔴 error fetching response on website.", error);
-        api.sendMessage("🔴 error fetching response on the website( http://eu4.diresnode.com:3737/ ), Please try again later.", event.threadID);
+        api.sendMessage("🔴 error fetching response on the website( https://share-apis.onrender.com/ ), Please try again later.", event.threadID);
   } 
 };
