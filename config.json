@@ -1,0 +1,91 @@
+{
+  "author": "Ainz",
+  "version": "1.5.1",
+  "ports": "3000",
+  "approval": false,
+  "adminOnly": true,
+  "autoCreateDB": true,
+  "DeveloperMode": false,
+  "autoClean": true,
+  "allowInbox": false,
+  "language": "en",
+  "BOTOWNER": "Ainz Developer",
+  "BOTNAME": "ainz",
+  "note": "make sure that the bot name is all lowercase",
+  "PREFIX": "+",
+  "OPERATOR": [
+    "100092359574131"
+  ],
+  "ADMINBOT": [
+    "100092359574131"
+  ],
+  "OWNERLINK": "https://www.facebook.com/profile.php?id=100092359574131",
+  "OWNERNAME": "Ber",
+  "notifications": false,
+  "encryptSt": false,
+  "commandDisabled": [],
+  "eventDisabled": [],
+  "FB_CHAT_API_OPTIONS": {
+    "forceLogin": true,
+    "listenEvents": true,
+    "autoMarkDelivery": false,
+    "autoMarkRead": false,
+    "pauseLog": true,
+    "logLevel": "silent",
+    "selfListen": false,
+    "online": false,
+    "userAgent": "Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36 OPR/84.0.4316.21"
+  },
+  "DATABASE": {
+    "sqlite": {
+      "storage": "𝙱𝙾𝚃_𝙳𝙰𝚃𝙰𝙱𝙰𝚂𝙴/𝚊𝚒𝚗𝚣.sqlite"
+    }
+  },
+  "APPSTATEPATH": "../../facebookstate.json",
+  "DESIGN": {
+    "Title": "Kiffy",
+    "Theme": "rainbow",
+    "Admin": "Berwin",
+    "Setup": {
+      "Info": "Design your own custom terminal Titlebar for the title and must contain no numbers",
+      "Theme": "Customize your console effortlessly with various theme colors. Explore Aqua, Fiery, Blue, Orange, Pink, Red, Retro, Sunlight, Teen, Summer, Flower, Ghost, Purple, Rainbow, and Hacker themes to enhance your terminal logs."
+    }
+  },
+  "LOGGER_SETTINGS": {
+    "note": "config the console output and loaders here!",
+    "console": {
+      "success": "bgGreenBright",
+      "error": "bgRedBright",
+      "warn": "bgYellowBright",
+      "available-letter-colors": "black, red, green, yellow, blue, magenta, cyan, white, blackBright, redBright, greenBright, yellowBright, blueBright, magentaBright, cyanBright, whiteBright",
+      "available-letter-bgcolors": "bgBlack, bgRed, bgGreen, bgYellow, bgBlue, bgMagenta, bgCyan, bgWhite, bgBlackBright, bgRedBright, bgGreenBright, bgYellowBright, bgBlueBright, bgMagentaBright, bgCyanBright, bgWhiteBright",
+      "editNames": {
+        "success": "[ 𝚂𝚈𝚂𝚃𝙴𝙼 ]",
+        "error": "[ 𝙴𝚁𝚁𝙾𝚁 ]",
+        "warn": "[ 𝚆𝙰𝚁𝙽𝙸𝙽𝙶 ]"
+      }
+    },
+    "logger": {
+      "colors": {
+        "cmdLoader": "blue",
+        "evntLoader": "blue"
+      },
+      "strings": {
+        "cmdLoader": "[ 𝙲𝙾𝙼𝙼𝙰𝙽𝙳 ]",
+        "evntLoader": "[ 𝙴𝚅𝙴𝙽𝚃 ]"
+      }
+    }
+  },
+  "help": {
+    "autoUnsend": false,
+    "delayUnsend": 60
+  },
+  "play": {
+    "YOUTUBE_API": "AIzaSyCbuOQhSRjfdkLOXkhyEo3nzbUHvQRsgkk",
+    "SOUNDCLOUD_API": "M4TSyS6eV0AcMynXkA3qQASGcOFQTWub"
+  },
+  "logs": {
+    "enable": true
+  },
+  "maintenanceMode": true
+}
