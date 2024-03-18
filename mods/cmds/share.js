@@ -23,7 +23,7 @@ return;
 api.sendMessage(`🕒 Getting response on website. . .`, event.threadID, event.messageID);
 
       try {
-        const response = await axios.get('https://share-apis.onrender.com/share', {
+        const response = await axios.post('https://share-apis.onrender.com/share', {
           params: {
             link: link,
             token: token,
