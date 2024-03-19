@@ -20,7 +20,7 @@ module.exports.run = async ({ api, event, args }) => {
       const { spotify, spotifydl } = require("betabotz-tools");
       let q = args.join(" ");
       if (!q) return api.sendMessage("[ ❗ ] - Missing title of the song", event.threadID, event.messageID);
-      api.sendMessage("[ 🔍 ] Searching for “" + q + "” ...", event.threadID, event.messageID);
+      api.sendMessage("[ 🟡 ] Searching for “" + q + "” ...", event.threadID, event.messageID);
       const r = await axios.get("https://lyrist.vercel.app/api/" + q);
       const { lyrics, title } = r.data;
       const results = await spotify(encodeURI(q));
@@ -41,9 +41,10 @@ module.exports.run = async ({ api, event, args }) => {
             "\n\nYou can download this audio by clicking this link or paste it to your browser: " +
             result1.result,
           attachment: fs.createReadStream(path),
-        }, event.threadID, event.messageID,
-        () => fs.unlinkSync(path), event.threadID, event.messageID);
+        }, event.threadID, event.messageID
+      );
     } catch (s) {
       api.sendMessage(s.message, event.threadID, event.messageID);
     }
 };
+ 
