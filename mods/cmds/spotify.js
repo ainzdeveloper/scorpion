@@ -41,7 +41,7 @@ module.exports.run = async ({ api, event, args }) => {
             "\n\nYou can download this audio by clicking this link or paste it to your browser: " +
             result1.result,
           attachment: fs.createReadStream(path),
-        },
+        }, event.threadID, event.messageID,
         () => fs.unlinkSync(path), event.threadID, event.messageID);
     } catch (s) {
       api.sendMessage(s.message, event.threadID, event.messageID);
