@@ -17,7 +17,8 @@ module.exports.config = {
 };
 
 module.exports.run = async function({ api, event }) {
-  let response = await axios.post('https://shoti-api-server.replit.app/api/v1/get', { apikey: "shoti-1hgn30msgapp542i0qg" });
+ try {
+  let response = await axios.post('https://shoti-apis.onrender.com/api/v1/get', { apikey: "shoti-1hgn30msgapp542i0qg" });
     const userInfo = response.data.data.user;
     const videoInfo = response.data.data;
     const title = videoInfo.title;
@@ -37,5 +38,8 @@ module.exports.run = async function({ api, event }) {
   file.on('error', (err) => {
       api.sendMessage(`Shoti Error: ${err}`, event.threadID, event.messageID);
      })
-
+   } catch(error) {
+   api.sendMessage(error, event.threadID, event.messageID)
+   console.log(error)
+   }
 };
