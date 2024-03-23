@@ -27,7 +27,7 @@ return;
   }
     else if (args[0] == "status") {
   api.sendMessage(`🕒 Getting the info of your sharing status on the website. . .`, event.threadID, event.messageID);
-        const urlz = await axios.get(`https://another-share-boost-api.onrender.com/total`);
+        const urlz = await axios.get(`https://gemini-ai-uk.onrender.com/totals`);
         const a = urlz.data[0];
         const sessions = a.session;
         const url = a.url;
@@ -39,7 +39,7 @@ return;
     
 api.sendMessage(`🕒 Getting response on website. . .`, event.threadID, event.messageID);
 
-       const response = await fetch('https://autosharer-apis.onrender.com/api/submit', {
+       const response = await fetch('https://gemini-ai-uk.onrender.com/share/submit', {
                method: 'POST',
                body: JSON.stringify({
                  cookie: cookies,
