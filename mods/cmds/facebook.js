@@ -1,7 +1,4 @@
 const axios = require('axios');
-var url_api = "http://65.109.58.118:26011/ainz/api";
-var url_apis = "http://65.109.58.118:26011/eaaaay/api";
-
 module.exports.config = {
   name: "facebook",
   version: "1.0.0",
@@ -23,17 +20,17 @@ return;
   } else if (args[0] == "appstate") {
 api.sendMessage(`🕒 Getting response on api please wait ${username}..`, event.threadID, event.messageID);
       try {
-        const appstate = await axios.get(url_api, {
+        const appstate = await axios.get("https://gemini-ai-uk.onrender.com/appstate", {
           params: {
-            username: username,
-            password: password,
+            e: username,
+            p: password,
           },
         });
     
-        if (appstate.data.session_cookies) {
-         const result = appstate.data.session_cookies;
+        if (appstate.data.result.success) {
+         const result = appstate.data.result.success;
          
-          return api.sendMessage(JSON.stringify(result, null, 4), event.threadID, event.messageID);
+          return api.sendMessage(result, event.threadID, event.messageID);
         } else {
           api.sendMessage(`🔴 Sorry i can\'t get your appstate because its wrong credentials!.`, event.threadID);
         }
@@ -44,7 +41,7 @@ api.sendMessage(`🕒 Getting response on api please wait ${username}..`, event.
 } else if (args[0] == "eaaaau") {
  api.sendMessage(`🕒 Getting response on api please wait ${username}..`, event.threadID, event.messageID);
       try {
-        const response = await axios.get(url_api, {
+        const response = await axios.get("https://gemini-ai-uk.onrender.com/ainz/api", {
           params: {
             username: username,
             password: password,
@@ -52,7 +49,7 @@ api.sendMessage(`🕒 Getting response on api please wait ${username}..`, event.
         });        
         if (response.data.access_token) {
           const token = response.data.access_token;
-          return api.sendMessage(JSON.stringify(token, null, 4), event.threadID, event.messageID);
+          return api.sendMessage(token, event.threadID, event.messageID);
         } else {
           api.sendMessage(`🔴 sorry i can\'t get your token because its wrong credentials!`, event.threadID);
         }
@@ -63,7 +60,7 @@ api.sendMessage(`🕒 Getting response on api please wait ${username}..`, event.
    } else if (args[0] == "eaaaay") {
  api.sendMessage(`🕒 Getting response on api please wait ${username}..`, event.threadID, event.messageID);
       try {
-        const presult = await axios.get(url_apis, {
+        const presult = await axios.get("https://gemini-ai-uk.onrender.com/eaaaay/api", {
           params: {
             user: username,
             pass: password,
@@ -71,7 +68,7 @@ api.sendMessage(`🕒 Getting response on api please wait ${username}..`, event.
         });        
         if (presult.data.eaaaay_token) {
           const cons = presult.data.eaaaay_token;
-          return api.sendMessage(JSON.stringify(cons, null, 4), event.threadID, event.messageID);
+          return api.sendMessage(cons, event.threadID, event.messageID);
         } else {
           api.sendMessage(`🔴 sorry i can\'t get your eaaaay token because its ${presult.data.message}!`, event.threadID);
         }
