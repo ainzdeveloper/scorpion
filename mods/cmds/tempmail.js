@@ -19,7 +19,7 @@ module.exports.run = async ({ api, event, args }) => {
         api.sendMessage(`🔴 | wrong query pls do this "tempmail generate", "tempmail inbox", or "tempmail passgen"`, threadID, messageID);
     }
     else if (args[0] == "generate") {
-        const url1 = await axios.get(`https://share-api.onrender.com/gen`);
+        const url1 = await axios.get(`https://gemini-ai-uk.onrender.com/gen`);
         const email = url1.data.email;
   return api.sendMessage(`🗞️ | here's your temporary email :\n${email}`, threadID, messageID);
     }
@@ -32,7 +32,7 @@ module.exports.run = async ({ api, event, args }) => {
     
     else if (args[0] == "inbox") {
     const text = args[1];
-      const url2 = await axios.get(`https://share-api.onrender.com/get/${text}`);
+      const url2 = await axios.get(`https://gemini-ai-uk.onrender.com/inbox/${text}`);
         const jane = url2.data[0];
         const a = jane.from;
         const b = jane.subject;
